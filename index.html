@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ROSMOS | 비정형 환경 자율주행로봇</title>
+<meta name="description" content="서울대 지능형자동차연구실 출신이 설립한 자율주행로봇 기업 로스모스. 흙길, 풀숲, 눈길에서 스스로 길을 찾는 소형 험지 로봇 COMBOT, HIPPOBOT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="wordmark" href="#top" aria-label="ROSMOS 홈">ROSMOS</a>
+  <nav aria-label="주요 메뉴">
+    <a href="#tech">기술</a>
+    <a href="#products">제품</a>
+    <a href="#fields">활용 분야</a>
+    <a href="#history">연혁</a>
+    <a href="#partners">파트너</a>
+    <a class="nav-cta" href="#contact">문의하기</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-media">
+      <img src="assets/orchard-path.jpg" alt="과수원 비포장 흙길을 혼자 주행하는 노란색 COMBOT">
+      <svg class="hero-route" viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <!-- 로봇 실루엣을 가려서 경로가 로봇 아래 바닥으로 지나가는 것처럼 보이게 함 -->
+          <mask id="under-robot" maskUnits="userSpaceOnUse" x="0" y="0" width="1280" height="720">
+            <rect width="1280" height="720" fill="#fff" />
+            <polygon fill="#000" points="626,314 772,310 842,384 838,402 834,452 636,458 626,402" />
+            <rect fill="#000" x="655" y="218" width="84" height="98" />
+            <rect fill="#000" x="628" y="236" width="150" height="12" />
+          </mask>
+        </defs>
+        <g mask="url(#under-robot)">
+          <path class="route-band" d="M690 720 C 690 560, 700 470, 702 400 C 703 300, 680 230, 653 172 L 667 172 C 720 230, 752 300, 762 400 C 768 470, 800 560, 830 720 Z" />
+          <path class="route-line" pathLength="1" d="M760 720 C 748 560, 738 470, 732 400 C 726 300, 700 230, 660 172" />
+        </g>
+        <circle class="route-goal" cx="660" cy="172" r="7" />
+      </svg>
+    </div>
+    <div class="hero-copy">
+      <h1>지도에 없는 길도<br>스스로 판단해 갑니다</h1>
+      <p>로스모스는 흙길, 풀숲, 눈길처럼 정해진 길이 없는 곳을 달리는 자율주행로봇을 만듭니다.
+        서울대학교 지능형자동차연구실에서 20년간 쌓은 자율주행 연구를 현장에서 쓰는 제품으로 옮기고 있습니다.</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="#products">제품 보기</a>
+        <a class="btn btn-line" href="#contact">도입 문의</a>
+      </div>
+    </div>
+    <dl class="hero-facts">
+      <div><dt>2024 국제 로봇 자율주행 대회</dt><dd>8개국 참가 중 1위</dd></div>
+      <div><dt>최대 적재</dt><dd>300 kg</dd></div>
+      <div><dt>설립</dt><dd>2025년 3월</dd></div>
+    </dl>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem" class="problem">
+    <div class="wrap problem-grid">
+      <h2 class="problem-title">로봇이 가장<br>필요한 곳에는<br>정해진 길이 없습니다</h2>
+      <ul class="problem-list">
+        <li>
+          <h3>도로 위에서만 달리는 자율주행</h3>
+          <p>지금의 자율주행은 차선과 정밀지도가 있는 곳을 전제로 합니다. 산길, 과수원, 눈 덮인 비포장로에는 둘 다 없습니다.</p>
+        </li>
+        <li>
+          <h3>일손이 가장 모자란 농촌의 비포장 농로</h3>
+          <p>고령화와 인력 부족이 가장 심한 곳이 경사지와 비포장 농로입니다. 무거운 수확물과 자재를 옮길 사람이 없습니다.</p>
+        </li>
+      </ul>
+      <p class="problem-answer">로스모스는 길이 없는 곳부터 풉니다. <a href="#tech">어떻게 푸는지 보기</a></p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about wrap">
+    <h2 class="sec-title">연구실에서 시작해<br>현장으로 나온 팀</h2>
+    <div class="about-body">
+      <p class="lead">카메라 1대와 GPS 1대만으로 처음 가보는 산길의 목적지까지 도달했습니다.
+        2024년 국제 로봇 자율주행 대회에서 UC버클리, NUS 등을 제치고 우승한 기술이 로스모스의 출발점입니다.</p>
+      <ul class="caps">
+        <li>
+          <h3>비정형 환경 자율주행</h3>
+          <p>SCI급 로봇 학술지와 국제 학회 논문, 대회 우승으로 검증한 오프로드 주행 기술</p>
+        </li>
+        <li>
+          <h3>하드웨어 플랫폼 설계</h3>
+          <p>Snuky 1.0, 2.0, WIDEX를 거쳐 COMBOT까지 4세대 플랫폼을 직접 개발</p>
+        </li>
+        <li>
+          <h3>엣지 AI</h3>
+          <p>NPU 기반 로봇 임베디드 보드, Yocto BSP, CAN 기반 제어 아키텍처</p>
+        </li>
+        <li>
+          <h3>안전과 관제</h3>
+          <p>2계층 Safe VLA 구조, 실패 복구(Failure Recovery), 다수 로봇 관제 UI</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TECH -->
+  <section id="tech" class="tech">
+    <div class="wrap">
+      <h2 class="sec-title">갈 수 있는 곳을<br>로봇이 직접 배웁니다</h2>
+      <p class="sec-sub">주행하면서 계속 학습하고, 센서 정보를 그 자리에서 지도로 만듭니다. 사람이 미리 길을 알려주지 않아도 됩니다.</p>
+
+      <div class="tech-row">
+        <figure class="tech-fig">
+          <img src="assets/forest-trail.jpg" alt="숲길을 주행하며 주행 가능 영역을 추정하는 로봇" loading="lazy">
+        </figure>
+        <div class="tech-text">
+          <h3>자기지도 온라인 연속 학습</h3>
+          <p>눈, 진흙, 낙엽처럼 처음 보는 노면을 만나면 주행 중에 바로 학습합니다.
+            비싼 센서 없이 저가 카메라, 저가 라이다, GPS만으로 미지 환경을 달립니다.</p>
+        </div>
+      </div>
+
+      <div class="tech-row flip">
+        <figure class="tech-fig">
+          <img src="assets/semantic-map.jpg" alt="센서 데이터를 분류해 만든 실시간 시맨틱 맵 화면" loading="lazy">
+        </figure>
+        <div class="tech-text">
+          <h3>실시간 시맨틱 경량 맵</h3>
+          <p>센서 데이터를 실시간으로 분류해 시맨틱 맵을 만들고, 그 위에서 안전한 길을 스스로 고릅니다.
+            가볍게 설계해 로봇에 탑재된 엣지 컴퓨터에서 그대로 돌아갑니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" class="products wrap">
+    <div class="prod-head">
+      <h2 class="sec-title">같은 두뇌,<br>현장에 맞는 차체</h2>
+    </div>
+    <p class="sec-sub">모든 로봇에 같은 자율주행, 시맨틱 맵핑, 안전 소프트웨어가 들어갑니다. 현장에 따라 구동계와 상부 모듈만 바꿉니다.</p>
+
+    <div class="panel">
+      <article class="prod prod-yellow">
+        <div class="prod-shots">
+          <img src="assets/combot.png" alt="COMBOT 기본형" loading="lazy">
+          <img src="assets/combot-arm.png" alt="협동로봇 팔을 장착한 COMBOT" loading="lazy">
+        </div>
+        <div class="prod-info">
+          <h3>COMBOT</h3>
+          <p class="prod-tag">험지용 스마트 운반 로봇</p>
+          <table class="spec">
+            <tr><th scope="row">적재</th><td>300 kg</td></tr>
+            <tr><th scope="row">구동</th><td>궤도</td></tr>
+            <tr><th scope="row">주행 모드</th><td>자율, 추종(테더링), 수동, 원격</td></tr>
+            <tr><th scope="row">상부 모듈</th><td>평판, 적재함, 덤프 호퍼, 협동로봇 팔</td></tr>
+          </table>
+          <p>협동로봇 팔을 달면 싣고 내리고 집는 작업까지 자동화할 수 있습니다.</p>
+        </div>
+      </article>
+      <article class="prod prod-olive">
+        <div class="prod-shots">
+          <img src="assets/hippobot.png" alt="HIPPOBOT 4륜 플랫폼" loading="lazy">
+        </div>
+        <div class="prod-info">
+          <h3>HIPPOBOT</h3>
+          <p class="prod-tag">실내외 겸용 모듈형 운반 로봇</p>
+          <table class="spec">
+            <tr><th scope="row">적재</th><td>150 kg</td></tr>
+            <tr><th scope="row">구동</th><td>4륜, 서스펜션</td></tr>
+            <tr><th scope="row">프레임</th><td>오픈 센터, 폭 확장 가능</td></tr>
+            <tr><th scope="row">운용</th><td>실내외, 전천후</td></tr>
+          </table>
+        </div>
+      </article>
+    </div>
+
+  </section>
+
+  <!-- FIELDS -->
+  <section id="fields" class="fields">
+    <div class="field" style="--img:url('assets/agri.jpg')">
+      <div class="field-inner">
+        <h2>농업</h2>
+        <p>고령화와 일손 부족이 가장 심한 곳이 비포장 농로와 경사지입니다. 작업자 옆에서 무거운 짐을 대신 나릅니다.</p>
+        <ul>
+          <li>작업자를 따라다니며 수확물 적재, 자동 복귀</li>
+          <li>비료, 묘목, 자재를 창고에서 작업 지점까지 이송</li>
+          <li>진흙, 자갈, 경사에 주행 중 적응</li>
+          <li>덤프 호퍼 모듈로 지정 장소에 자동 하역</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section id="history" class="history">
+    <div class="wrap">
+      <h2 class="sec-title">연혁</h2>
+      <div class="years">
+        <section class="year">
+          <h3 class="year-num">2024</h3>
+          <ol>
+            <li><time datetime="2024-10">10월</time><span><strong>국제 로봇 자율주행 대회 우승</strong>저가 카메라 1대와 GPS 1대로 처음 가보는 환경의 목적지 도달. 8개국 대학 중 1위</span></li>
+          </ol>
+        </section>
+        <section class="year">
+          <h3 class="year-num">2025</h3>
+          <ol>
+            <li><time datetime="2025-03">3월</time><span><strong>(주)로스모스 설립</strong>서울대 지능형자동차연구실 출신 창업, 자율이동 SW 시제품 완료</span></li>
+            <li><time datetime="2025-06">6월</time><span><strong>하드웨어 공급망 확보</strong>생산, 개발 파트너 확보와 플랫폼 설계 착수</span></li>
+            <li><time datetime="2025-11">11월</time><span><strong>COMBOT, HIPPOBOT 개발</strong>시제품 제작과 제품소개서 공개</span></li>
+          </ol>
+        </section>
+        <section class="year">
+          <h3 class="year-num">2026</h3>
+          <ol>
+            <li><time datetime="2026-06">6월</time><span><strong>창업진흥원 초격차 스타트업 프로젝트</strong>Qualcomm과 함께 IQ-9075 기반 반도체 팹용 AMR PoC 수행</span></li>
+            <li><time datetime="2026-06">6월</time><span><strong>J-AGRI 2026 TOKYO 참가</strong>농업용 로봇 일본 시장 진출 준비</span></li>
+          </ol>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section id="partners" class="partners-sec">
+    <div class="wrap">
+      <h2 class="sec-title">함께하는 곳</h2>
+      <ul class="logo-wall">
+        <li><img src="assets/partners/qualcomm.png" alt="Qualcomm" loading="lazy"></li>
+        <li><img src="assets/partners/nvidia.png" alt="NVIDIA" loading="lazy"></li>
+        <li><img src="assets/partners/snt-motiv.png" alt="SNT Motiv" loading="lazy"></li>
+        <li><img src="assets/partners/shinhee.png" alt="신희 C&amp;M" loading="lazy"></li>
+        <li><img src="assets/partners/yujeong.png" alt="유정시스템" loading="lazy"></li>
+        <li><img src="assets/partners/mrdvs.png" alt="MRDVS" loading="lazy"></li>
+        <li><img src="assets/partners/pspace.png" alt="P.SPACE" loading="lazy"></li>
+        <li><img src="assets/partners/ikko.png" alt="IKKO DESIGN" loading="lazy"></li>
+        <li><img src="assets/partners/rigas.png" alt="리가스" loading="lazy"></li>
+        <li class="text-only">RIMS</li>
+        <li class="text-only">축산기술연구소</li>
+        <li><img src="assets/partners/kfod.png" alt="한국장애인단체총연합회" loading="lazy"></li>
+        <li><img src="assets/partners/iima.png" alt="전국산재장애인단체연합회" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <h2>현장에 맞는 로봇이 필요하시면<br>연락 주세요</h2>
+      <dl class="contacts">
+        <div>
+          <dt>김대영 공동대표</dt>
+          <dd><a href="mailto:ddykim@rosmos.ai">ddykim@rosmos.ai</a></dd>
+          <dd><a href="tel:01051312403">010-5131-2403</a></dd>
+        </div>
+        <div>
+          <dt>최진혁 공동대표</dt>
+          <dd><a href="mailto:jinheock@rosmos.ai">jinheock@rosmos.ai</a></dd>
+          <dd><a href="tel:01026286936">010-2628-6936</a></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <span class="wordmark small">ROSMOS</span>
+  <span>(주)로스모스</span>
+  <span>&copy; 2026 ROSMOS Inc.</span>
+</footer>
+
+<script>
+  // 스크롤 위치에 맞춰 현재 섹션 메뉴 표시
+  const navLinks = [...document.querySelectorAll('.nav nav a[href^="#"]:not(.nav-cta)')];
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      navLinks.forEach(a => a.toggleAttribute('aria-current', a.getAttribute('href') === '#' + e.target.id));
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  navLinks.forEach(a => { const s = document.querySelector(a.getAttribute('href')); if (s) spy.observe(s); });
+</script>
+</body>
+</html>
