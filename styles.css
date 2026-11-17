@@ -216,11 +216,19 @@ p { margin: 0; }
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(30,38,22,0) 20%, rgba(30,38,22,.92) 72%);
 }
-.field-inner { position: relative; padding: 48px; max-width: 560px; }
+.field-inner {
+  position: relative; width: min(var(--wrap), 100% - 40px);
+  margin-inline: auto; padding: 56px 0;
+}
 .field h2 { font-size: 40px; }
-.field-inner p { margin-top: 12px; color: rgba(255,255,255,.85); }
-.field ul { margin: 20px 0 0; padding: 0; list-style: none; font-size: 15px; }
-.field li { padding: 8px 0; border-top: 1px solid rgba(255,255,255,.2); }
+.field-inner p { margin-top: 12px; max-width: 640px; color: rgba(255,255,255,.85); }
+/* 항목이 넷이라 넓은 화면에서는 2열로 펼쳐 섹션 폭을 채운다 */
+.field ul {
+  margin: 24px 0 0; padding: 0; list-style: none; font-size: 15px;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 48px;
+}
+.field li { padding: 10px 0; border-top: 1px solid rgba(255,255,255,.2); }
 
 .events { list-style: none; padding: 0; margin: 28px 0 0; border-top: 1px solid var(--line); }
 .events li { display: flex; gap: 28px; padding: 14px 0; border-bottom: 1px solid var(--line); }
@@ -293,7 +301,8 @@ p { margin: 0; }
   .prod-info { border-left: 0; border-top: 6px solid var(--accent); padding: 28px 24px; }
   .fields { grid-template-columns: 1fr; }
   .field { min-height: 560px; }
-  .field-inner { padding: 32px 20px; }
+  .field-inner { padding: 36px 0; }
+  .field ul { grid-template-columns: 1fr; }
   .hero-facts { grid-template-columns: 1fr; position: relative; }
   .hero-facts div, .hero-facts div:first-child { border-left: 0; padding: 12px 0; border-top: 1px solid rgba(255,255,255,.14); }
   .hero-copy { padding: 64px 0 48px; }
