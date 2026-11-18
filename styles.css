@@ -127,6 +127,8 @@ p { margin: 0; }
 .hero-facts div:first-child { border-left: 0; padding-left: 0; }
 .hero-facts dt { font-size: 13px; color: rgba(255,255,255,.62); }
 .hero-facts dd { margin: 2px 0 0; font-family: var(--latin); font-size: 22px; font-weight: 700; }
+/* 한글 값은 본문 글꼴로 (라틴 글꼴에는 한글이 없어 자간이 틀어진다) */
+.hero-facts dd.ko { font-family: inherit; font-size: 20px; }
 
 /* ---------- shared section type ---------- */
 .sec-title { font-size: clamp(28px, 3.4vw, 42px); font-weight: 700; color: var(--navy); }
