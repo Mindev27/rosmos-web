@@ -171,7 +171,8 @@ p { margin: 0; }
 .tech-row.flip { grid-template-columns: 5fr 7fr; }
 .tech-row.flip .tech-fig { order: 2; }
 .tech-fig { margin: 0; }
-.tech-fig img { width: 100%; border-radius: 2px; }
+/* 두 행의 사진 높이를 같게 맞춘다 (아래 시맨틱 맵 이미지 비율 기준) */
+.tech-fig img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; border-radius: 2px; }
 .tech-text h3 { font-size: 24px; }
 .tech-text h3::before {
   content: ""; display: block; width: 36px; height: 4px; background: var(--yellow); margin-bottom: 18px;
